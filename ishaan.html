@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+<style>
+table, tr {border:hidden;}
+td, th {border:hidden;}
+tr:hover {background-color: gray;}
+</style>
+
+<style>
+    {
+        box-sizing: border-box;
+    }
+/* Set additional styling options for the columns */
+    .column {
+    float: left;
+    }
+
+/* Set width length for the left, right and middle columns */
+    .left {
+    width: 65%;
+    }
+
+    .middle {
+    width: 10%;
+    }
+    
+    .right {
+    width: 25%;
+    }
+
+    .third {
+    width: 33%;
+    }
+    
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+</style>
+
+<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+<section data-background="#000000">
+        <p style="font-size:30px"> https://bit.ly/IshaanChandokSamuelLab </p>
+</section>
+
+
+<section data-background="#000000">
+    <h3 style="font-size:40px"> 
+        <span style="color:yellow"> Rapid and Cost‐effective Connectomics  </span> 
+    </h3>
+    <h3 style="font-size:25px"> 
+        <span style="color:yellow"> with Intelligent Image Acquisition, Reconstruction, and Querying  </span> 
+    </h3>
+        <p style="font-size:20px">
+            Yaron Meirovitch
+            <sup>1</sup>,
+            Core Francisco Park
+            <sup>1</sup>,
+            Lu Mi
+            <sup>2</sup>,
+            Ishaan Chandok
+            <sup>1</sup>,
+            Pavel Potocek
+            <sup>3</sup>,
+            Shashata Sawmya
+            <sup>2</sup>,
+            Yicong Li
+            <sup>1</sup>,
+            Yuelong Wu
+            <sup>1</sup>,
+            Daniel Berger
+            <sup>1</sup>,
+            Richard Schalek
+            <sup>1</sup>,
+            Hanspeter Pfister
+            <sup>1</sup>,
+            Remco Schoenmakers
+            <sup>2</sup>,
+            Maurice Peemen
+            <sup>2</sup><br>,
+            Jeff W. Lichtman
+            <sup>1</sup>,
+            Aravinthan D.T. Samuel
+            <sup>1</sup>,
+            Nir Shavit
+            <sup>2</sup>
+        </p>
+        <p style="font-size:20px">
+            <sup>1</sup>
+            Harvard,
+            <sup>2</sup>
+            MIT,
+            <sup>3</sup>
+            Thermofisher
+        </p>
+</section>
+
+<!-- Limitations  -->
+
+<section>
+    <section data-background="#000000">
+        <p>Connectomics</p>
+        <p data-id="picture"> 
+            <img src=" assetsmcknight/NanoscaleImaging.png " width="60%"> 
+        </p>
+    </section>
+
+<section data-background="#000000">
+    <p> Mouse Visual Cortex </p> 
+        <video loop controls='true' width='70%' height='70%' src="assetsishaan/mousevisualcortex.m4v" data-autoplay></video>
+        <p > <small> Karlupia et al. (2023) </small></p>
+</section>
+
+<section data-background="#000000">
+    <p> Mouse Visual Cortex </p> 
+        <img src="assetsishaan/insetregion.png" width="70%">
+</section>
+
+
+<section data-background="#000000">
+    <p> Mouse Visual Cortex </p> 
+        <video loop controls='true' width='70%' height='70%' src="assetsishaan/insetregion.mp4" data-autoplay></video>
+</section>
+
+    <section>
+        <p>Scanning Electron Microscopes</p>
+        <div style="position: absolute; top: 150px; left: 3%; width: 27%;">
+            <p style="font-size:20px">
+                1 cubic millimeter <br>
+                &#8595;<br> 
+                4 nm &#215; 4 nm &#215; 30 nm per voxel 
+                &#8595;<br> 
+                2,000,000,000,000,000 pixels
+            </p>
+        </div>
+        <div style="position: absolute; top: 100px; left: 36%; width: 27%; height: 600px;">
+            <img src=" assetsmcknight/SinglebeamSEM.png " height="300px">
+            <p style="font-size:20px">
+                1 &#181;s / pixel<br>
+                &#8595;<br> 
+                60 years 
+            </p>
+        </div>
+        <div style="position: absolute; top: 100px; left: 69%; width: 27%; height: 600px;">
+            <img src=" assetsmcknight/MultibeamSEM.png " height="300px"> 
+            <p style="font-size:20px">
+                61 beams<br> 
+                &#8595;<br> 
+                1 year 
+            </p>
+        </div>
+    </section>
+
+<section data-background="#FFFFFF">
+    <p> Fast, noisy images &#8594 lower segmentation quality </p> 
+        <img src="assetsishaan/fastnoisyerror.png" width="80%">
+</section>
+
+<section data-auto-animate data-background="#000000">
+    <img data-id="lowtohigherror" src="assetsishaan/image7A.png" width="100%">
+</section>
+<section data-auto-animate data-background="#000000">
+    <img data-id="lowtohigherror" src="assetsishaan/image7B.png" width="100%">
+</section>
+<section data-auto-animate data-background="#000000">
+    <img data-id="lowtohigherror" src="assetsishaan/image7C.png" width="100%">
+</section>
+<section data-auto-animate data-background="#000000">
+    <img data-id="lowtohigherror" src="assetsishaan/image7D.png" width="100%">
+</section>
+<section data-auto-animate data-background="#000000">
+    <img data-id="lowtohigherror" src="assetsishaan/image7.png" width="100%">
+</section>
+</section>
+
+<section data-auto-animate data-background="#000000">
+    <img data-id="standard" src="assetsishaan/image8F.png" width="100%">
+</section>
+<section data-auto-animate data-background="#000000">
+    <img data-id="standard" src="assetsishaan/image8E.png" width="100%">
+</section>
+<section data-auto-animate data-background="#000000">
+    <img data-id="standard" src="assetsishaan/image8D.png" width="100%">
+</section>
+<section data-auto-animate data-background="#000000">
+    <img data-id="standard" src="assetsishaan/image8C.png" width="100%">
+</section>
+<section data-auto-animate data-background="#000000">
+    <img data-id="standard" src="assetsishaan/image8B.png" width="100%">
+</section>
+<section data-auto-animate data-background="#000000">
+    <img data-id="standard" src="assetsishaan/image8A.png" width="100%">
+</section>
+<section data-auto-animate data-background="#000000">
+    <img data-id="standard" src="assetsishaan/image8.png" width="100%">
+</section>
+
+<section>
+    <p> Segmentation accuracy varies spatially </p> 
+        <img src="assetsishaan/hardtosegment.png" width="80%">
+</section>
+<section>
+
+<section data-background="#FFFFFF">
+    <p> An ML-trained "Error Network" generates bounding boxes around error-prone regions 
+ </p> 
+        <img src="assetsishaan/errornetwork.png" width="80%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> The microscope rescans any specified sub-region </p> 
+        <img src="assetsishaan/rescan.png" width="80%">
+</section>
+
+<section data-background="#FFFFFF">
+    <p> EM2MB can process images with non-homogeneous dwell times </p> 
+        <img src="assetsishaan/em2mb.png" width="80%">
+</section>
+
+</section>
+<!-- Super resolution-->
+
+<section data-auto-animate data-background="#000000">
+    <img data-id="pipeline" src="assetsishaan/pipelineH.png" width="100%">
+</section>
+<section data-auto-animate data-background="#000000">
+    <img data-id="pipeline" src="assetsishaan/pipelineG.png" width="100%">
+</section>
+<section data-auto-animate data-background="#000000">
+    <img data-id="pipeline" src="assetsishaan/pipelineF.png" width="100%">
+</section>
+<section data-auto-animate data-background="#000000">
+    <img data-id="pipeline" src="assetsishaan/pipelineE.png" width="100%">
+</section>
+<section data-auto-animate data-background="#000000">
+    <img data-id="pipeline" src="assetsishaan/pipelineD.png" width="100%">
+</section>
+<section data-auto-animate data-background="#000000">
+    <img data-id="pipeline" src="assetsishaan/pipelineB.png" width="100%">
+</section>
+<section data-auto-animate data-background="#000000">
+    <img data-id="pipeline" src="assetsishaan/pipelineA.png" width="100%">
+</section>
+<section data-auto-animate data-background="#000000">
+    <img data-id="pipeline" src="assetsishaan/pipeline.png" width="100%">
+</section>
+
+<!-- Segmentation Tests-->
+
+
+<section>
+
+<section>
+    <p> Networks can be trained to exclude certain ROIs </p> 
+        <img src="assetsishaan/mustexclude.png" width="80%">
+</section>
+
+<section>
+    <p> Networks can be trained to include certain ROIs </p> 
+        <img src="assetsishaan/mustinclude.png" width="80%">
+</section>
+
+<section>
+    <p> Fused images can be made to look like long scan images </p> 
+        <img src="assetsishaan/fuserreadl.pdf" width="80%">
+</section>
+
+</section>
+
+<section>
+
+<section data-background="#FFFFFF">
+    <p> SmartEM accelerates acquisition by 7-fold <br>
+            without changing information content </p> 
+        <img src="assetsishaan/sevenfold.png" width="60%">
+        <p align="center" style="font-size:25px">  
+            The "smart" average pixel dwell time that renders the same information as traditionally fixed dwell times        
+        </p>
+</section>
+
+
+<section data-background="#FFFFFF">
+    <p> SmartEM accelerates acquisition by 7-fold <br>
+    <div class="row">
+        <div class="column left">
+        <img src="assetsishaan/sevenfold.png" width="100%">
+        <p align="center" style="font-size:25px">  
+            "Smart" average pixel dwell time that renders the <br>
+            <em> same information  </em> as traditionally fixed dwell time        
+        </p>
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column right">
+        <p align="left" style="font-size:25px">  
+            <br>
+            <br>
+            <br>
+            <br>
+                \[ t_{smart}=t_{initial} + \alpha t_{rescan} \] 
+        </p>
+        <p align="left" style="font-size:18px">  
+                $ t_{smart}$.... smart time <br>
+                $ \alpha$.... rescan rate <br>
+                $ t_{initial}$.... initial dwell time <br>
+                $ t_{rescan}$.... rescan dwell time <br>
+        </p>
+        </div>
+    </div>
+</section>
+</section>
+
+<section>
+<section data-background="#000000">
+    <p> Mouse Visual Cortex Imaged with SmartEM </p> 
+        <video loop controls='true' width='70%' height='70%' src="assetsishaan/media3.m4v" data-autoplay></video>
+        <p align="left" style="font-size:18px">  
+            <span style="color:yellow"> Initial Dwell Time ($t_{initial}$): 99 ns/pixel<br> </span> 
+            <span style="color:yellow"> Rescan Rate ($\alpha$): 3%<br> </span> 
+            <span style="color:yellow"> Rescan Dwell Time ($t_{rescan}$): 800 ns<br> </span> 
+        </p>
+</section>
+
+<section data-background="#000000">
+    <p> Mouse Visual Cortex Imaged with SmartEM </p> 
+        <video loop controls='true' width='70%' height='70%' src="assetsishaan/media4.m4v" data-autoplay></video>
+        <p align="left" style="font-size:18px">  
+            <span style="color:yellow"> Initial Dwell Time ($t_{initial}$): 99 ns/pixel<br> </span> 
+            <span style="color:yellow"> Rescan Rate ($\alpha$): 3%<br> </span> 
+            <span style="color:yellow"> Rescan Dwell Time ($t_{rescan}$): 800 ns<br> </span> 
+        </p>
+</section>
+
+<section>
+    <p> 3D Segmentation from SmartEM </p> 
+        <img src="assetsishaan/Yaron_smartSEM_200objects_render3.png" width="80%">
+</section>
+
+</section>
+
+<!-- Acknowledgments  -->
+
+<section data-background="#000000">
+    <div style="position: absolute; top: 0px; left: 0%; width: 30%; height: 200px;">
+        <img src=" assetsmcknight/yaron.jpeg ">
+        <p style="font-size:50%;">Yaron Meirovitch <br />  Harvard/MIT </p>
+    </div>
+                                            
+    <div style="position: absolute; top: 0px; left: 33%; width: 33%; height: 200px;">
+        <img src=" assetsmcknight/CorePark.png ">
+        <p style="font-size:50%;">Core Park <br /> Harvard </p>
+    </div>
+                                            
+    <div style="position: absolute; top: 0px; left: 66%; width: 33%; height: 200px;">
+        <img src=" assetsishaan/ishaan.jpg ">
+        <p style="font-size:50%;">Ishaan Chandok  <br /> Harvard </p>
+    </div>
+                                            
+    <div style="position: absolute; top: 350px; left: 0%; width: 30%; height: 600px;">
+            <img src=" assetsmcknight/Thermofisher.png " width="100%"> </div>
+    <div style="position: absolute; top: 350px; left: 33%; width: 30%; height: 600px;">
+        <p style="font-size:50%;"> Pavel Potocek </p>
+        <p style="font-size:50%;"> Maurice Peemen </p>
+        <p style="font-size:50%;"> Richard Schalek </p>
+        <p style="font-size:50%;"> Lu Mi  </p>
+    </div>
+    <div style="position: absolute; top: 350px; left: 66%; width: 30%; height: 600px;">
+        <p style="font-size:50%;"> Jeff Lichtman </p>
+        <p style="font-size:50%;"> Nir Shavit </p>
+        <p style="font-size:50%;"> Hanspeter Pfister  </p>
+        <p style="font-size:50%;"> Shashata Sawmya </p>
+        <p style="font-size:50%;"> Yicong Li </p>
+    </div>
+</section>
+
+<section>
+<section data-auto-animate data-background="#000000">
+    <img data-id="rawpipeline" src="assetsishaan/rawpipelineA.png" width="100%">
+</section>
+<section data-auto-animate data-background="#000000">
+    <img data-id="rawpipeline" src="assetsishaan/rawpipelineB.png" width="100%">
+</section>
+<section data-auto-animate data-background="#000000">
+    <img data-id="rawpipeline" src="assetsishaan/rawpipelineC.png" width="100%">
+</section>
+<section data-auto-animate data-background="#000000">
+    <img data-id="rawpipeline" src="assetsishaan/rawpipelineD.png" width="100%">
+</section>
+<section data-auto-animate data-background="#000000">
+    <img data-id="rawpipeline" src="assetsishaan/rawpipelineE.png" width="100%">
+</section>
+</section>
+
+</div>
+
+</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			Reveal.initialize({
+				history: true,
+				transition: 'linear',
+
+				mathjax2: {
+					config: 'TeX-AMS_HTML-full',
+					TeX: {
+						Macros: {
+							R: '\\mathbb{R}',
+							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+						}
+					}
+				},
+
+				// There are three typesetters available
+				// RevealMath.MathJax2 (default)
+				// RevealMath.MathJax3
+				// RevealMath.KaTeX
+				//
+				// More info at https://revealjs.com/math/
+				plugins: [ RevealMath.MathJax2 ]
+			});
+		</script>
+	</body>
+</html>
