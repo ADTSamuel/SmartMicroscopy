@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+<style>
+table, tr {border:hidden;}
+td, th {border:hidden;}
+tr:hover {background-color: gray;}
+</style>
+
+<style>
+    {
+        box-sizing: border-box;
+    }
+/* Set additional styling options for the columns */
+    .column {
+    float: left;
+    }
+
+/* Set width length for the left, right and middle columns */
+    .left {
+    width: 65%;
+    }
+
+    .middle {
+    width: 10%;
+    }
+    
+    .right {
+    width: 25%;
+    }
+
+    .third {
+    width: 33%;
+    }
+    
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+</style>
+
+<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+<section data-background="#000000">
+        <p style="font-size:30px"> https://bit.ly/U01MilestonesSamuel2024 </p>
+</section>
+
+<section>
+    <p> Milestone Report Meeting - U01-NS132158 </p> 
+        <p align="left" style="font-size:25px">  
+            <span style="color:yellow"> Principal Investigators:  </span> 
+            Aravinthan Samuel (contact), Jeff Lichtman, Hanspeter Pfister, Nir Shavit, Brock Wester<br><br>
+            <span style="color:yellow"> Project Title:  </span> 
+            BRAIN CONNECTS: Rapid and Cost‐effective Connectomics with Intelligent Image Acquisition, Reconstruction, and Querying
+        </p>
+</section>
+
+<section data-background="#000000">
+    <h3 style="font-size:50px"> 
+        Paper under review at <br>
+        <span style="color:yellow"> <em> Nature Methods </em>  </span> 
+    </h3>
+</section>
+
+<section data-background="#000000">
+    <h3 style="font-size:40px"> 
+        <span style="color:yellow"> Rapid and Cost‐effective Connectomics  </span> 
+    </h3>
+    <h3 style="font-size:25px"> 
+        <span style="color:yellow"> with Intelligent Image Acquisition, Reconstruction, and Querying  </span> 
+    </h3>
+        <p style="font-size:20px">
+            Yaron Meirovitch
+            <sup>1</sup>,
+            Core Francisco Park
+            <sup>1</sup>,
+            Lu Mi
+            <sup>2</sup>,
+            Pavel Potocek
+            <sup>3</sup>,
+            Shashata Sawmya
+            <sup>2</sup>,
+            Yicong Li
+            <sup>1</sup>,<br>
+            Ishaan Chandok
+            <sup>1</sup>,
+            Thomas Athey
+            <sup>2</sup>,
+            Neha Karlupia
+            <sup>1</sup>,
+            Yuelong Wu
+            <sup>1</sup>,
+            Daniel Berger
+            <sup>1</sup>,
+            Richard Schalek
+            <sup>1</sup>,<br>
+            Hanspeter Pfister
+            <sup>1</sup>,
+            Remco Schoenmakers
+            <sup>2</sup>,
+            Maurice Peemen
+            <sup>2</sup>,<br>
+            Jeff W. Lichtman
+            <sup>1</sup>,
+            Aravinthan D.T. Samuel
+            <sup>1</sup>,
+            Nir Shavit
+            <sup>2</sup>
+        </p>
+        <p style="font-size:20px">
+            <sup>1</sup>
+            Harvard,
+            <sup>2</sup>
+            MIT,
+            <sup>3</sup>
+            Thermofisher
+        </p>
+        <a href="https://www.biorxiv.org/content/10.1101/2023.10.05.561103v1"> Link to Biorxiv </a>
+</section>
+
+<!-- Limitations  -->
+
+<section>
+    <section data-background="#000000">
+        <p>Connectomics</p>
+        <p data-id="picture"> 
+            <img src=" assetsmcknight/NanoscaleImaging.png " width="40%"> 
+        </p>
+            <p style="font-size:30px">
+                The problem is <span style="color:yellow"> <em> visualizing  </em>  </span> tissue at the 1-10 millimeter scale <br>
+                and 
+                <span style="color:yellow"> <em> resolving  </em>  </span> 
+                at the nanometer scale 
+            </p> 
+    </section>
+
+    <section data-background="#000000">
+        <p> Our testbed: Mouse Visual Cortex </p> 
+            <video loop controls='true' width='70%' height='70%' src="assetsishaan/insetregion.mp4" data-autoplay></video>
+            <p > <small> Karlupia et al. (2023) </small></p>
+    </section>
+
+    <section data-auto-animate data-background="#000000">
+        <p>Scanning Electron Microscopes</p>
+        <div style="position: absolute; top: 150px; left: 3%; width: 27%;">
+            <p style="font-size:20px">
+                1 cubic millimeter <br>
+                &#8595;<br> 
+                4 nm &#215; 4 nm &#215; 30 nm per voxel 
+                &#8595;<br> 
+                2,000,000,000,000,000 pixels
+            </p>
+        </div>
+        <div style="position: absolute; top: 100px; left: 36%; width: 27%; height: 600px;">
+            <img src=" assetsmcknight/SinglebeamSEM.png " height="300px">
+            <p style="font-size:20px">
+                1 &#181;s / pixel<br>
+                &#8595;<br> 
+                60 years 
+            </p>
+        </div>
+        <div style="position: absolute; top: 100px; left: 69%; width: 27%; height: 600px;">
+            <img src=" assetsmcknight/MultibeamSEM.png " height="300px"> 
+            <p style="font-size:20px">
+                1 &#181;s / pixel<br>
+                <em> with 61 beams </em> <br> 
+                &#8595;<br> 
+                ~2 years
+            </p>
+        </div>
+    </section>
+
+    <section data-auto-animate data-background="#000000">
+        <p>Scanning Electron Microscopes</p>
+        <div style="position: absolute; top: 150px; left: 3%; width: 27%;">
+            <p style="font-size:20px">
+                1 cubic millimeter <br>
+                &#8595;<br> 
+                4 nm &#215; 4 nm &#215; 30 nm per voxel 
+                &#8595;<br> 
+                2,000,000,000,000,000 pixels
+            </p>
+        </div>
+        <div style="position: absolute; top: 350px; left: 3%; width: 27%;">
+            <p data-id="pricepoint" style="font-size:20px">
+                <span style="color:yellow"> Increase the speed of <br> single beam SEM by 7-fold </span> <br>
+                <span style="color:yellow"> &#8595; </span> <br> 
+                <span style="color:yellow"> Lower the price point of connectomics </span> 
+            </p>
+        </div>
+        <div style="position: absolute; top: 100px; left: 36%; width: 27%; height: 600px;">
+            <img src=" assetsmcknight/SinglebeamSEM.png " height="300px">
+            <p style="font-size:20px">
+                1 &#181;s / pixel<br>
+                &#8595;<br> 
+                60 years 
+            </p>
+        </div>
+        <div style="position: absolute; top: 100px; left: 69%; width: 27%; height: 600px;">
+            <img src=" assetsmcknight/MultibeamSEM.png " height="300px"> 
+            <p style="font-size:20px">
+                1 &#181;s / pixel<br>
+                <em> with 61 beams </em> <br> 
+                &#8595;<br> 
+                ~2 years
+            </p>
+        </div>
+    </section>
+
+    <section data-auto-animate data-background="#000000">
+        <p>Scanning Electron Microscopes</p>
+        <div style="position: absolute; top: 150px; left: 3%; width: 27%;">
+            <p style="font-size:20px">
+                1 cubic millimeter <br>
+                &#8595;<br> 
+                4 nm &#215; 4 nm &#215; 30 nm per voxel 
+                &#8595;<br> 
+                2,000,000,000,000,000 pixels
+            </p>
+        </div>
+        <div style="position: absolute; top: 350px; left: 3%; width: 27%;">
+            <p data-id="pricepoint" style="font-size:20px">
+                <span style="color:yellow"> Increase the speed of <br> single beam SEM by 7-fold </span> <br>
+                <span style="color:yellow"> &#8595; </span> <br> 
+                <span style="color:yellow"> Lower the price point of connectomics </span> 
+            </p>
+        </div>
+        <div style="position: absolute; top: 100px; left: 36%; width: 27%; height: 600px;">
+            <img src=" assetsmcknight/SinglebeamSEM.png " height="300px">
+            <p style="font-size:20px">
+                1 &#181;s / pixel<br>
+                &#8595;<br> 
+                60 years 
+            </p>
+        </div>
+        <div style="position: absolute; top: 550px; left: 36%; width: 27%; height: 600px;">
+            <p data-id="fasttext" style="font-size:20px">
+                <span style="color:orange"> 25 ns / pixel </span> <br>
+                <span style="color:orange"> &#8595; </span> <br> 
+                <span style="color:orange"> 1.5 years  </span> 
+            </p>
+        </div>
+        <div style="position: absolute; top: 100px; left: 69%; width: 27%; height: 600px;">
+            <img src=" assetsmcknight/MultibeamSEM.png " height="300px"> 
+            <p style="font-size:20px">
+                1 &#181;s / pixel<br>
+                <em> with 61 beams </em> <br> 
+                &#8595;<br> 
+                ~2 years
+            </p>
+        </div>
+    </section>
+
+    <section data-background="#000000">
+        <p> Fast, noisy images &#8594 lower segmentation quality </p> 
+            <img src="assetsishaan/fastnoisyerror.png" width="80%">
+    </section>
+
+    <section data-auto-animate data-background="#000000">
+        <img data-id="lowtohigherror" src="assetsishaan/image7A.png" width="100%">
+    </section>
+    <section data-auto-animate data-background="#000000">
+        <img data-id="lowtohigherror" src="assetsishaan/image7B.png" width="100%">
+    </section>
+    <section data-auto-animate data-background="#000000">
+        <img data-id="lowtohigherror" src="assetsishaan/image7C.png" width="100%">
+    </section>
+    <section data-auto-animate data-background="#000000">
+        <img data-id="lowtohigherror" src="assetsishaan/image7D.png" width="100%">
+    </section>
+    <section data-auto-animate data-background="#000000">
+        <img data-id="lowtohigherror" src="assetsishaan/image7.png" width="100%">
+    </section>
+</section>
+
+<section>
+    <section data-auto-animate data-background="#000000">
+        <div style="position: absolute; top: 300px; left: 0%; width: 100%; height: 600px;">
+        <p> Long dwell times fix errors </p> 
+        </div>
+    </section>
+    <section data-auto-animate data-background="#000000">
+        <div style="position: absolute; top: 300px; left: 0%; width: 100%; height: 600px;">
+            <p> Long dwell times fix errors </p> 
+            <p data-id="noteverywhere" > <span style="color:yellow"> but not everywhere... </span> </p> 
+        </div>
+    </section>
+
+    <section data-auto-animate data-background="#000000">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p> Segmentation accuracy varies spatially </p> 
+            <img src="assetsishaan/hardtosegment.png" width="80%">
+        </div>
+    </section>
+
+    <section data-auto-animate data-background="#000000">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p> Segmentation accuracy varies spatially </p> 
+            <img src="assetsishaan/hardtosegment.png" width="80%">
+        <p data-id="predictably" > <span style="color:yellow"> but also varies predictably  </span> </p> 
+        </div>
+    </section>
+</section>
+
+    <section data-background="#000000">
+        <p> <span style="color:yellow"> The idea in a &#x1F95C; </span> </p> 
+        <p> Use ultrafast imaging everywhere </p> 
+        <p> Add slow imaging only where errors might occur </p> 
+    </section>
+
+<section>
+    <section data-auto-animate data-background="#272727">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p> <span style="color:yellow"> We built an ML-trained "error network" </span> </p> 
+        </div>
+    </section>
+
+    <section data-auto-animate data-background="#272727">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p> <span style="color:yellow"> We built an ML-trained "error network" </span> </p> 
+        <p data-id="errornetwork"> Trained with images containing segmentation errors <br>
+            <span style="color:red"> Error network  </span> predicts error prone regions </p> 
+        <img data-id="errornetwork" src="assetsishaan/errnetworkblack.png" width="80%">
+        </div>
+    </section>
+
+    <section data-auto-animate data-background="#272727">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p> <span style="color:yellow"> The microscope rescans any specified sub-region  </span> </p> 
+        </div>
+    </section>
+    <section data-auto-animate data-background="#272727">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p> <span style="color:yellow"> The microscope rescans any specified sub-region  </span> </p> 
+        <img data-id="rescan" src="assetsishaan/rescanoutput.png" width="80%">
+        <p data-id="rescan" style="font-size:30px"> Bounding boxes around error-prone regions are slowly rescanned </p>
+        </div>
+    </section>
+    <section data-auto-animate data-background="#272727">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p> <span style="color:yellow"> The microscope rescans any specified sub-region  </span> </p> 
+        <img data-id="rescan" src="assetsishaan/rescanoutput.png" width="80%">
+        <p data-id="rescan" style="font-size:30px"> Bounding boxes around error-prone regions are slowly rescanned </p>
+        <p data-id="rescan2" style="font-size:30px"> Rescans and fast scans are fused </p>
+        </div>
+    </section>
+    <section data-auto-animate data-background="#272727">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p> <span style="color:yellow"> The microscope rescans any specified sub-region  </span> </p> 
+        <img data-id="rescan" src="assetsishaan/rescanoutput.png" width="80%">
+        <p data-id="rescan" style="font-size:30px"> Bounding boxes around error-prone regions are slowly rescanned </p>
+        <p data-id="rescan2" style="font-size:30px"> Rescans and fast scans are fused </p>
+        <p data-id="rescan3" style="font-size:30px"> <em> Do boundary discontinuities cause segmentation problems?   </em> </p>
+        </div>
+    </section>
+</section>
+
+<section>
+<section data-auto-animate data-background="#272727">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p style="font-size:30px"> <span style="color:yellow"> We built the EM2MB network that is robust to image discontinuity </span> </p> 
+        </div>
+</section>
+<section data-auto-animate data-background="#272727">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p style="font-size:30px"> <span style="color:yellow"> We built the EM2MB network that is robust to image discontinuity </span> </p> 
+        <img data-id="em2mb" src="assetsishaan/rescanmask.png" width="15%">
+        <p data-id="em2mbtext" style="font-size:30px">  Rescan an arbitrary S-shaped mask </p>
+        </div>
+</section>
+<section data-auto-animate data-background="#272727">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p style="font-size:30px"> <span style="color:yellow"> We built the EM2MB network that is robust to image discontinuity </span> </p> 
+        <img data-id="em2mb" src="assetsishaan/em2mbsteptwo.png" width="30%">
+        <p data-id="em2mbtext" style="font-size:30px">  Rescan an arbitrary S-shaped mask <br>
+        <p data-id="em2mbtextmore" style="font-size:30px">  Create fused image <br>
+        </div>
+</section>
+<section data-auto-animate data-background="#272727">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p style="font-size:30px"> <span style="color:yellow"> We built the EM2MB network that is robust to image discontinuity </span> </p> 
+        <img data-id="em2mb" src="assetsishaan/em2mbstepthreewitharrows.png" width="69%">
+        <p data-id="em2mbtext" style="font-size:30px">  Rescan an arbitrary S-shaped mask <br>
+        <p data-id="em2mbtextmore" style="font-size:30px">  Create fused image <br>
+        <p data-id="em2mbtextevenmore" style="font-size:30px"> <span style="color:orange"> EM2MB captures membranes across discontinuities </span> </p>
+        </div>
+</section>
+</section>
+
+<section>
+<section data-auto-animate data-background="#000000">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p style="font-size:30px"> <span style="color:yellow"> The pipeline </span> </p> 
+            <img data-id="pipeline" src="assetsishaan/pipelineH.png" width="100%">
+        </div>
+</section>
+<section data-auto-animate data-background="#000000">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p style="font-size:30px"> <span style="color:yellow"> The pipeline </span> </p> 
+                <img data-id="pipeline" src="assetsishaan/pipelineG.png" width="100%">
+        </div>
+</section>
+<section data-auto-animate data-background="#000000">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p style="font-size:30px"> <span style="color:yellow"> The pipeline </span> </p> 
+            <img data-id="pipeline" src="assetsishaan/pipelineF.png" width="100%">
+        </div>
+</section>
+<section data-auto-animate data-background="#000000">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p style="font-size:30px"> <span style="color:yellow"> The pipeline </span> </p> 
+            <img data-id="pipeline" src="assetsishaan/pipelineE.png" width="100%">
+        </div>
+</section>
+<section data-auto-animate data-background="#000000">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p style="font-size:30px"> <span style="color:yellow"> The pipeline </span> </p> 
+            <img data-id="pipeline" src="assetsishaan/pipelineD.png" width="100%">
+        </div>
+</section>
+<section data-auto-animate data-background="#000000">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p style="font-size:30px"> <span style="color:yellow"> The pipeline </span> </p> 
+            <img data-id="pipeline" src="assetsishaan/pipelineB.png" width="100%">
+        </div>
+</section>
+<section data-auto-animate data-background="#000000">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p style="font-size:30px"> <span style="color:yellow"> The pipeline </span> </p> 
+            <img data-id="pipeline" src="assetsishaan/pipelineA.png" width="100%">
+        </div>
+</section>
+<section data-auto-animate data-background="#000000">
+        <div style="position: absolute; top: 0px; left: 0%; width: 100%; height: 600px;">
+        <p style="font-size:30px"> <span style="color:yellow"> The pipeline </span> </p> 
+            <img data-id="pipeline" src="assetsishaan/pipeline.png" width="100%">
+        </div>
+</section>
+</section>
+
+<!-- Must Exclude and Must Include -->
+
+<section>
+    <section data-auto-animate>
+        <div style="position: absolute; top: 300px; left: 0%; width: 100%; height: 600px;">
+        <p style="font-size:30px"> It's a waste to rescan cell bodies, blood vessels, etc. </p> 
+        </div>
+    </section>
+    <section data-auto-animate>
+        <div style="position: absolute; top: 300px; left: 0%; width: 100%; height: 600px;">
+        <p style="font-size:30px"> It's a waste to rescan cell bodies, blood vessels, etc. </p> 
+        <p style="font-size:40px" data-id="mustexclude" > 
+        we trained a <span style="color:#E12BFC"> <b> MUSTEXCLUDE </span> </b> network <br>
+        that <em> eliminates  </em> spurious rescan masks </p> 
+        </div>
+    </section>
+    <section data-background="#272727">
+            <p> <span style="color:#E12BFC"> <b> MUSTEXCLUDE   </b> </span> </p> 
+            <img src="assetsishaan/mustexcludepipeline.png" width="80%">
+    </section>
+</section>
+
+<!-- Must Exclude -->
+<section>
+    <section data-auto-animate>
+        <div style="position: absolute; top: 300px; left: 0%; width: 100%; height: 600px;">
+        <p style="font-size:30px"> High-resolution is sometimes always needed </p> 
+        </div>
+    </section>
+    <section data-auto-animate>
+        <div style="position: absolute; top: 300px; left: 0%; width: 100%; height: 600px;">
+        <p style="font-size:30px"> High-resolution is sometimes always needed </p> 
+        <p style="font-size:40px" data-id="mustinclude" > we trained a <span style="color:#30FC2B"> <b> MUSTINCLUDE  </b> </span> network <br>
+        to always rescan desired features like synapses </p> 
+        </div>
+    </section>
+    <section data-background="#272727">
+            <p> <span style="color:#30FC2B"> <b> MUSTINCLUDE   </b> </span> </p> 
+            <img src="assetsishaan/mustincludepipeline.png" width="80%">
+    </section>
+</section>
+
+<section>
+    <section data-auto-animate>
+        <div style="position: absolute; top: 100px; left: 0%; width: 100%; height: 600px;">
+        <p style="font-size:30px"> 
+            Fused images can be fully segmented <br>
+            but boundaries can be visually unappealing 
+        </p> 
+            <img data-id="fuser" src="assetsishaan/fuserwithoutgen.png" width="26%">
+        </div>
+    </section>
+    <section data-auto-animate>
+        <div style="position: absolute; top: 100px; left: 0%; width: 100%; height: 600px;">
+        <p style="font-size:30px"> 
+            Fused images can be fully segmented <br>
+            but boundaries can be visually unappealing 
+        </p> 
+            <img data-id="fuser" src="assetsishaan/fuserreadl.png" width="80%">
+        <p data-id="generativeAI" style="font-size:30px"> 
+           Super-resolution/generative AI makes <br>
+           fast scans resemble slow scans 
+        </p> 
+    </section>
+</section>
+
+
+<section>
+    <section data-auto-animate>
+        <div style="position: absolute; top: 100px; left: 0%; width: 100%; height: 600px;">
+        <p style="font-size:30px" > How fast is SmartEM when image quality is the same as traditional EM? </p>
+        <div class="row">
+            <div class="column right">
+
+                <p align="left" style="font-size:20px">  
+                    Smart pixel time, $ t_{smart}$ <br>
+                    \[ t_{smart}=t_{initial} + \alpha t_{rescan} \] 
+                </p>
+
+                <p align="right" style="font-size:18px">  
+                    $ \alpha$.... rescan rate <br>
+                    $ t_{initial}$.... initial dwell time <br>
+                    $ t_{rescan}$.... rescan dwell time <br>
+                </p>
+
+            </div>
+            <div class="column middle">
+                <p align="left" style="font-size:20px">  
+                    &nbsp;&nbsp;&nbsp;&nbsp; 
+                </p>
+            </div>
+            <div class="column left">
+            </div>
+        </div>
+        </div>
+    </section>
+    <section data-auto-animate>
+        <div style="position: absolute; top: 100px; left: 0%; width: 100%; height: 600px;">
+        <p style="font-size:30px" > How fast is SmartEM when image quality is the same as traditional EM? </p>
+        <div class="row">
+            <div class="column right">
+
+                <p align="left" style="font-size:20px">  
+                    Smart pixel time, $ t_{smart}$ <br>
+                    \[ t_{smart}=t_{initial} + \alpha t_{rescan} \] 
+                </p>
+
+                <p align="right" style="font-size:18px">  
+                    $ \alpha$.... rescan rate <br>
+                    $ t_{initial}$.... initial dwell time <br>
+                    $ t_{rescan}$.... rescan dwell time <br>
+                </p>
+
+            </div>
+            <div class="column middle">
+                <p align="left" style="font-size:20px">  
+                    &nbsp;&nbsp;&nbsp;&nbsp; 
+                </p>
+            </div>
+            <div class="column left">
+
+            <p data-id="comparisontext" align="center" style="font-size:25px">  
+            With image quality of traditional 1000 ns dwell time, <br>
+            <span style="color:yellow"> smart pixel times are 7-fold shorter  </span> 
+            </p>
+            <img data-id="comparisonfigure" src="assetsishaan/sevenfold.png" width="80%">
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section data-background="#000000">
+        <p>Scanning Electron Microscopes</p>
+        <div style="position: absolute; top: 150px; left: 3%; width: 27%;">
+            <p style="font-size:20px">
+                1 cubic millimeter <br>
+                &#8595;<br> 
+                4 nm &#215; 4 nm &#215; 30 nm per voxel 
+                &#8595;<br> 
+                2,000,000,000,000,000 pixels
+            </p>
+        </div>
+        <div style="position: absolute; top: 350px; left: 3%; width: 27%;">
+            <p style="font-size:20px">
+                <span style="color:yellow"> Increase the speed of <br> single beam SEM by 7-fold </span> <br>
+                <span style="color:yellow"> &#8595; </span> <br> 
+                <span style="color:yellow"> Lower the price point of connectomics </span> 
+            </p>
+        </div>
+        <div style="position: absolute; top: 100px; left: 36%; width: 27%; height: 600px;">
+            <img src=" assetsmcknight/SinglebeamSEM.png " height="300px">
+            <p style="font-size:20px">
+                1 &#181;s / pixel<br>
+                &#8595;<br> 
+                60 years 
+            </p>
+        </div>
+        <div style="position: absolute; top: 550px; left: 36%; width: 27%; height: 600px;">
+        </div>
+        <div style="position: absolute; top: 100px; left: 69%; width: 27%; height: 600px;">
+            <img src=" assetsmcknight/MultibeamSEM.png " height="300px"> 
+            <p style="font-size:20px">
+                1 &#181;s / pixel<br>
+                <em> with 61 beams </em> <br> 
+                &#8595;<br> 
+                ~2 years
+            </p>
+        </div>
+    </section>
+</section>
+
+<section>
+<section data-background="#000000">
+    <p> Mouse Visual Cortex Imaged with SmartEM </p> 
+        <video loop controls='true' width='60%' height='60%' src="assetsishaan/media3.mp4" data-autoplay></video>
+</section>
+
+<section data-background="#000000">
+    <p> Mouse Visual Cortex Imaged with SmartEM </p> 
+        <video loop controls='true' width='60%' height='60%' src="assetsishaan/media4.mp4" data-autoplay></video>
+        <p align="left" style="font-size:18px">  
+            <span style="color:yellow"> Initial Dwell Time ($t_{initial}$): 99 ns/pixel<br> </span> 
+            <span style="color:yellow"> Rescan Rate ($\alpha$): 3%<br> </span> 
+            <span style="color:yellow"> Rescan Dwell Time ($t_{rescan}$): 800 ns<br> </span> 
+        </p>
+</section>
+
+<section data-background="#000000">
+    <p> Mouse Visual Cortex Segmented with SmartEM </p> 
+        <video loop controls='true' width='60%' height='60%' src="assetsishaan/Highmag.mp4" data-autoplay></video>
+</section>
+
+<section data-background="#000000">
+    <p> 3D Segmentation from SmartEM </p> 
+        <img src="assetsishaan/Figure_3D_arrows.jpg" width="70%">
+    <p style="font-size:20px"> Automated segmentation correctly identifies 65% of dendritic spines <br>
+            Any missed spine can be proofread and corrected  </p>
+    <p style="font-size:20px"> <span style="color:yellow"> Same benchmark performance as state-of-the-art multibeam pipeline  </span> </p>
+</section>
+
+</section>
+
+<section>
+
+
+<section>
+    <p style="font-size:20px"> <span style="color:yellow"> Milestone 1.1.1:  </span> Automated segmentation of membranes and synapses on SEM support computer </p> 
+    <p align="left" style="font-size:18px"> <span style="color:yellow"> Success criteria:  </span> Software code run on SEM support computer producing segmentation and synapse classification results indistinguishable from offline processing of the same inputs as assessed by VI metric, carried out at a rate of at least 4 MB/sec per GPU. </p> 
+        <img src="assetsishaan/fig_dwellTimeborder.png" width="60%">
+    <p style="font-size:20px"> Fast images are segmented and error-prone regions are calculated by the SEM support computer <br>
+        <span style="color:yellow"> <em> in less time than fast acquisition by the SEM computer  </em>  </span> 
+    </p> 
+</section>
+
+<section data-auto-animate>
+    <div style="position: absolute; top: 100px; left: 0%; width: 100%; height: 600px;">
+    <p style="font-size:20px"> <span style="color:yellow"> Milestone 1.1.2:  </span> Image rescan and hybrid image generation on SEM support computer </p> 
+    <p align="left" style="font-size:18px"> <span style="color:yellow"> Success criteria:  </span> Software code run on the SEM support computer producing rescan masks at a rate of 4MB of fast scan image/sec per GPU, with indistinguishable performance compared to the offline implementation.  </p> 
+        <img data-id="phase" src="assetsishaan/learningphase.png" width="60%">
+    <p data-id="phasetext " style="font-size:20px"> During the learning phase, Error Network and FUSEDEM2MB are trained using traditional SEM </p> 
+    </div>
+</section>
+<section data-auto-animate>
+    <div style="position: absolute; top: 100px; left: 0%; width: 100%; height: 600px;">
+    <p style="font-size:20px"> <span style="color:yellow"> Milestone 1.1.2:  </span> Image rescan and hybrid image generation on SEM support computer </p> 
+    <p align="left" style="font-size:18px"> <span style="color:yellow"> Success criteria:  </span> Software code run on the SEM support computer producing rescan masks at a rate of 4MB of fast scan image/sec per GPU, with indistinguishable performance compared to the offline implementation.  </p> 
+        <img data-id="phase" src="assetsishaan/acquisitionphase.png" width="60%">
+    <p data-id="phasetext " style="font-size:20px"> During the acquisition phase, <span style="color:yellow"> <em> images are rescanned and fused images are created in real-time  </em>  </span> </p> 
+    </div>
+</section>
+
+<section>
+    <p style="font-size:20px"> <span style="color:yellow"> Milestone 1.1.3: </span> Scan/rescan parameter evaluation </p> 
+    <p align="left" style="font-size:18px"> <span style="color:yellow"> Success criteria:  </span> Framework and initial results testing scan/rescan parameters to determine tradeoffs for throughput vs. accuracy of segmentation and synapse classification.  </p> 
+        <img src="assetsishaan/Figure_3D_arrows.jpg" width="80%">
+    <p style="font-size:20px"> SmartEM generates <span style="color:yellow"> <em> aligned and segmented connectomes for mouse cortex with equal 3D quality as multi-beam SEM  </em>  </span> </p> 
+</section>
+
+<section>
+    <p style="font-size:20px"> <span style="color:yellow"> Milestone 1.1.4: </span> Evaluation framework for human interpretation of hybrid images </p> 
+    <p align="left" style="font-size:18px"> <span style="color:yellow"> Success criteria:  </span> Establish a transparent framework for human interaction with hybrid images for feature evaluation and proofreading of segmentation and synapse classification results.  </p> 
+        <img src="assetsishaan/75ns_600ns_examples.png" width="60%">
+    <p style="font-size:20px"> <span style="color:yellow"> <em> Raw output of SmartEM is fully proofread-able by a human annotator.<br> Generative AI translates the style of SmartEM images to look like traditional EM images.  </em>  </span> </p> 
+</section>
+
+<section>
+    <p style="font-size:20px"> <span style="color:yellow"> Milestone 1.1.5: </span> Integrate segmentation analyses into rescan calculations </p> 
+    <p align="left" style="font-size:18px"> <span style="color:yellow"> Success criteria:  </span> Prototype software that applies streamlined ROI detection and segmentation to enable realtime extraction of connectomic data.  Results compared to offline analysis using extracted segment cross sections, to inform further iterative development.  </p> 
+        <img src="assetsishaan/SynapseExample.png" width="60%">
+    <p style="font-size:20px"> <span style="color:yellow"> <em> ERRNET identifies regions susceptible to segmentation errors and re-scans them at a higher quality. <br> Complementary neural network (MUSTINCLUDE) always re-scans high-value regions, e.g., synapses.  </em>  </span> </p> 
+</section>
+
+<section>
+    <p style="font-size:20px"> <span style="color:yellow"> Milestone 2.1.1:  </span> Highly parallelized algorithm for cloud-based image alignment</p> 
+    <p align="left" style="font-size:18px"> <span style="color:yellow"> Success criteria:  </span> Convert alignment and segmentation software pipelines into multi-threaded algorithms for cluster compute.  </p> 
+        <img src="assetsishaan/milestone211.png" width="70%">
+    <p style="font-size:20px"> <span style="color:yellow"> <em> Block matching technique obtain matching points between neighboring images, from which elastic transformations mapping the raw data to the aligned volume are computed by mesh relaxation.  <br>
+    Algorithms re-developed for on-board alignment in local instantiation using Python.  </em>  </span> </p> 
+</section>
+</section>
+
+<section>
+<section>
+    <p> Year 2 connectomics goal </p> 
+        <img src="assetsSC/relativesizetectum.png" width="40%">
+        <p align="center" style="font-size:20px">  
+            Superior colliculus, similar absolute size across species
+        </p>
+        <p align="center" style="font-size:20px">  
+            <span style="color:yellow"> Important comparative changes in structure and function from non-foveal mouse to foveal primate  </span> 
+        </p>
+</section>
+
+<section>
+        <img src="assetsSC/WideFieldMouse.png" width="60%">
+        <p align="center" style="font-size:20px">  
+            0.3 mm x 0.3 mm x 1 mm volume captures lateral extent of largest neuron (wide-field vertical neuron) 
+        </p>
+        <p align="center" style="font-size:20px">  
+           <span style="color:yellow"> One year with current SmartEM pipeline  </span> 
+        </p>
+</section>
+</section>
+
+<section>
+<section data-auto-animate data-background="#000000">
+    <p> Year 2 pipeline goal </p> 
+    <img data-id="newpipe" src="assetsishaan/newpipelineF.png" width="100%">
+</section>
+<section data-auto-animate data-background="#000000">
+    <p> Year 2 pipeline goal </p> 
+    <img data-id="newpipe" src="assetsishaan/newpipelineE.png" width="100%">
+</section>
+<section data-auto-animate data-background="#000000">
+    <p> Year 2 pipeline goal </p> 
+    <img data-id="newpipe" src="assetsishaan/newpipelineC.png" width="100%">
+</section>
+<section data-auto-animate data-background="#000000">
+    <p> Year 2 pipeline goal </p> 
+    <img data-id="newpipe" src="assetsishaan/newpipelineB.png" width="100%">
+</section>
+<section data-auto-animate data-background="#000000">
+    <p> Year 2 pipeline goal </p> 
+    <img data-id="newpipe" src="assetsishaan/newpipeline.png" width="100%">
+</section>
+</section>
+
+
+
+
+</div>
+
+</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+			Reveal.initialize({
+				history: true,
+				transition: 'linear',
+
+				mathjax2: {
+					config: 'TeX-AMS_HTML-full',
+					TeX: {
+						Macros: {
+							R: '\\mathbb{R}',
+							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+						}
+					}
+				},
+
+				// There are three typesetters available
+				// RevealMath.MathJax2 (default)
+				// RevealMath.MathJax3
+				// RevealMath.KaTeX
+				//
+				// More info at https://revealjs.com/math/
+				plugins: [ RevealMath.MathJax2 ]
+			});
+		</script>
+	</body>
+</html>
