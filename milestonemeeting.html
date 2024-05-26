@@ -380,7 +380,7 @@ tr:hover {background-color: gray;}
         <img data-id="rescan" src="assetsishaan/rescanoutput.png" width="80%">
         <p data-id="rescan" style="font-size:30px"> Bounding boxes around error-prone regions are slowly rescanned </p>
         <p data-id="rescan2" style="font-size:30px"> Rescans and fast scans are fused </p>
-        <p data-id="rescan3" style="font-size:30px"> <em> Do boundary discontinuities cause segmentation problems?   </em> </p>
+        <p data-id="rescan3" style="font-size:30px"> <span style="color:orange"> <em> Do boundary discontinuities cause segmentation problems?   </em>  </span> </p>
         </div>
     </section>
 </section>
@@ -412,7 +412,7 @@ tr:hover {background-color: gray;}
         <img data-id="em2mb" src="assetsishaan/em2mbstepthreewitharrows.png" width="69%">
         <p data-id="em2mbtext" style="font-size:30px">  Rescan an arbitrary S-shaped mask <br>
         <p data-id="em2mbtextmore" style="font-size:30px">  Create fused image <br>
-        <p data-id="em2mbtextevenmore" style="font-size:30px"> <span style="color:orange"> EM2MB captures membranes across discontinuities </span> </p>
+        <p data-id="em2mbtextevenmore" style="font-size:30px"> <span style="color:orange"> EM2MB seamlessly segments across discontinuities </span> </p>
         </div>
 </section>
 </section>
@@ -524,12 +524,11 @@ tr:hover {background-color: gray;}
         <div style="position: absolute; top: 100px; left: 0%; width: 100%; height: 600px;">
         <p style="font-size:30px"> 
             Fused images can be fully segmented <br>
-            but boundaries can be visually unappealing 
+            <em> but boundaries can be visually unappealing  </em> 
         </p> 
             <img data-id="fuser" src="assetsishaan/fuserreadl.png" width="80%">
         <p data-id="generativeAI" style="font-size:30px"> 
-           Super-resolution/generative AI makes <br>
-           fast scans resemble slow scans 
+           <span style="color:yellow"> Super-resolution/generative AI makes <br> <em> fast scans resemble slow scans   </em> </span> 
         </p> 
     </section>
 </section>
@@ -543,7 +542,7 @@ tr:hover {background-color: gray;}
             <div class="column right">
 
                 <p align="left" style="font-size:20px">  
-                    Smart pixel time, $ t_{smart}$ <br>
+                    <span style="color:yellow"> Smart pixel time, $ t_{smart}$  </span> <br>
                     \[ t_{smart}=t_{initial} + \alpha t_{rescan} \] 
                 </p>
 
@@ -571,7 +570,7 @@ tr:hover {background-color: gray;}
             <div class="column right">
 
                 <p align="left" style="font-size:20px">  
-                    Smart pixel time, $ t_{smart}$ <br>
+                    <span style="color:yellow"> Smart pixel time, $ t_{smart}$  </span> <br>
                     \[ t_{smart}=t_{initial} + \alpha t_{rescan} \] 
                 </p>
 
@@ -591,7 +590,7 @@ tr:hover {background-color: gray;}
 
             <p data-id="comparisontext" align="center" style="font-size:25px">  
             With image quality of traditional 1000 ns dwell time, <br>
-            <span style="color:yellow"> smart pixel times are 7-fold shorter  </span> 
+            <span style="color:orange"> <em> smart pixel times are 7-fold shorter   </em> </span> 
             </p>
             <img data-id="comparisonfigure" src="assetsishaan/sevenfold.png" width="80%">
 
@@ -725,7 +724,8 @@ tr:hover {background-color: gray;}
     <p style="font-size:20px"> <span style="color:yellow"> Milestone 2.1.1:  </span> Highly parallelized algorithm for cloud-based image alignment</p> 
     <p align="left" style="font-size:18px"> <span style="color:yellow"> Success criteria:  </span> Convert alignment and segmentation software pipelines into multi-threaded algorithms for cluster compute.  </p> 
         <img src="assetsishaan/milestone211.png" width="70%">
-    <p style="font-size:20px"> <span style="color:yellow"> <em> Block matching technique obtain matching points between neighboring images, from which elastic transformations mapping the raw data to the aligned volume are computed by mesh relaxation.  <br>
+    <p align="left" style="font-size:20px"> <span style="color:yellow"> <em> Block matching technique obtain matching points between neighboring images.<br>
+    Elastic transformations map raw data to the aligned volume are computed by mesh relaxation.  <br>
     Algorithms re-developed for on-board alignment in local instantiation using Python.  </em>  </span> </p> 
 </section>
 </section>
