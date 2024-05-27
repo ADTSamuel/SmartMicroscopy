@@ -21,8 +21,8 @@
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 
 <style>
-table, tr {border:hidden;}
-td, th {border:hidden;}
+table, tr {border:1px solid;}
+td, th {border:1px solid;}
 tr:hover {background-color: gray;}
 </style>
 
@@ -44,6 +44,10 @@ tr:hover {background-color: gray;}
     width: 10%;
     }
     
+    .half {
+    width: 45%;
+    }
+
     .five {
     width: 5%;
     }
@@ -660,6 +664,15 @@ tr:hover {background-color: gray;}
             </p>
         </div>
     </section>
+<section>
+    <p>  </p> 
+        <p align="center" style="font-size:30px">  
+            Use the same idea to make make a smart multibeam SEM?
+        </p>
+        <p align="center" style="font-size:25px">  
+            <span style="color:yellow"> No, the 61 (or 91 beams) of a modern multibeam SEM <br> <em> are not independently controllable  </em> </span> 
+        </p>
+</section>
 </section>
 
 <section>
@@ -685,10 +698,11 @@ tr:hover {background-color: gray;}
 
 <section data-background="#000000">
     <p> 3D Segmentation from SmartEM </p> 
-        <img src="assetsishaan/Figure_3D_arrows.jpg" width="70%">
+        <img src="assetsishaan/Figure_3D_arrows.jpg" width="60%">
     <p style="font-size:20px"> Automated segmentation correctly identifies 65% of dendritic spines <br>
             Any missed spine can be proofread and corrected  </p>
     <p style="font-size:20px"> <span style="color:yellow"> Same benchmark performance as state-of-the-art multibeam pipeline  </span> </p>
+        <a style="font-size:20px" href="https://www.science.org/doi/10.1126/science.adk4858"> Link to Shapson-Coe (2024) </a>
 </section>
 
 </section>
@@ -698,12 +712,10 @@ tr:hover {background-color: gray;}
         <p> Datasets Leveraged in Cloud Workflows </p> 
     <div class="row">
         <div class="column left">
-            <p style="font-size:30px"> <span style="color:gray"> Mouse </span> </p>
             <p style="font-size:20px"> <span style="color:white"> 
             <ul>
-                <li align="left" style="font-size:20px;color:white"> Karlupia et al. 2023 </li> 
-                <li align="left" style="font-size:20px;color:cyan"> https://doi.org/10.1016/j.biopsych.2023.01.025 </li> 
-                <li align="left" style="font-size:20px;color:cyan"> Dataset  </li> 
+                <li align="left" style="font-size:20px;color:white"> <a style="font-size:20px" href="https://doi.org/10.1016/j.biopsych.2023.01.025"> Link to Karlupia et al. (2024) </a> </li> 
+                <li align="left" style="font-size:20px;color:white"> Dataset  </li> 
                 <ul>
                     <li align="left" style="font-size:20px;color:white"> Mouse cortex data (both traditional and smartEM)  </li> 
                     <li align="left" style="font-size:20px;color:white"> <b> Extent: </b> 382 &#181;m 292 &#181;m 2.82 &#181;m (94 slices)  </li> 
@@ -714,6 +726,7 @@ tr:hover {background-color: gray;}
             </p>
         </div>
         <div class="column middle">
+            <p style="font-size:30px"> <span style="color:gray"> Mouse </span> </p>
             <p align="left" style="font-size:20px">  
                 &nbsp;&nbsp;&nbsp;&nbsp; 
             </p>
@@ -727,7 +740,6 @@ tr:hover {background-color: gray;}
         <p> Datasets Leveraged in Cloud Workflows </p> 
     <div class="row">
         <div class="column left">
-            <p style="font-size:30px"> <span style="color:gray"> Worm </span> </p>
             <p style="font-size:20px"> <span style="color:white"> 
             <ul>
                 <li align="left" style="font-size:20px;color:cyan"> Dataset  </li> 
@@ -740,6 +752,7 @@ tr:hover {background-color: gray;}
             </p>
         </div>
         <div class="column right">
+            <p style="font-size:30px"> <span style="color:gray"> Worm </span> </p>
             <img src="assetsBrock/worm.png" width="100%">
         </div>
     </div>
@@ -782,7 +795,7 @@ tr:hover {background-color: gray;}
                   </tr>
                 </tbody>
             </table> 
-    <p style="font-size:25px"> <span style="color:yellow"> Access to Year 1 data and downstream products will be made available to the community via BossDB ecosystem (i.e. a projects page for CONNECTS work products).  </span> </p>
+    <p align="left" style="font-size:25px"> <span style="color:yellow"> Access to Year 1 data and downstream products will be made available to the community via BossDB ecosystem (i.e. a projects page for CONNECTS work products).  </span> </p>
     </section>
 </section>
 
@@ -847,7 +860,7 @@ tr:hover {background-color: gray;}
     <p> Local vs Cloud Segmentation Assessment  </p> 
     <div class="row">
         <div class="column left">
-        <p align="center" style="font-size:20px">  
+        <p align="center" style="font-size:25px">  
             Variation of Information (VI) score distribution of random subvolumes of cloud vs local segmentation (bootstrapped)
         </p>
         <img src="assetsBrock/image9.png" width="100%">
@@ -861,8 +874,8 @@ tr:hover {background-color: gray;}
         <img src="assetsBrock/segmentationassessmenttwo.png" width="100%">
         <p align="left" style="font-size:15px">  
             <ul>
-            <li align="left" style="font-size:20px;color:white"> VI implementation on random subvolumes of size [512, 512, 1] results in VI score of ~6.8 </li> <br>
-            <li align="left" style="font-size:20px;color:white"> Identical subvolumes get a VI score of 0 </li> <br>
+            <li align="left" style="font-size:20px;color:white"> VI implementation on noise (i.e., random subvolumes of size [512, 512, 1]) results in VI score of ~6.8 <span style="color:yellow"> (A very bad score)  </span> </li> 
+            <li align="left" style="font-size:20px;color:white"> Identical subvolumes get a VI score of 0 <span style="color:yellow"> (A perfect score)  </span> </li> 
             <li align="left" style="font-size:20px;color:white"> 95% Credible interval: [0.1328216  0.15347959] </li> 
             </ul>
         </p>
@@ -878,10 +891,8 @@ tr:hover {background-color: gray;}
 </section>
 <section>
     <p> Cloud Enabled Workflow with Argo </p> 
-        <img src="assetsBrock/CloudArgoCont.png" width="80%">
-</section>
-<section>
-    <p> Cloud Enabled Workflow with Argo </p> 
+    <div class="row">
+        <div class="column half">
         <p align="left" style="font-size:30">  
             <ul>
                 <li align="left" style="font-size:20px;color:white"> Enables scalable and efficient management of complex connectomics pipelines on AWS.  </li> <br>
@@ -889,6 +900,16 @@ tr:hover {background-color: gray;}
                 <li align="left" style="font-size:20px;color:white"> Supports event-driven workflows for real-time data processing, closing the loop for iterative development and visualization. </li> 
             </ul>
         </p>
+        </div>
+        <div class="column middle">
+            <p align="left" style="font-size:20px">  
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+            </p>
+        </div>
+        <div class="column half">
+        <img src="assetsBrock/CloudArgoCont.png" width="100%">
+        </div>
+    </div>
 </section>
 </section>
 
@@ -906,6 +927,75 @@ tr:hover {background-color: gray;}
 </section>
 </section>
 
+<section>
+<section>
+    <p> Aim 1 Milestones - Year 1 </p> 
+    <p style="font-size:20px"> <span style="color:yellow"> Milestone 1.1.1:  </span> Automated segmentation of membranes and synapses on SEM support computer </p> 
+    <p align="left" style="font-size:18px"> <span style="color:yellow"> Success criteria:  </span> Software code run on SEM support computer producing segmentation and synapse classification results indistinguishable from offline processing of the same inputs as assessed by VI metric, carried out at a rate of at least 4 MB/sec per GPU. </p> 
+        <img src="assetsishaan/fig_dwellTimeborder.png" width="60%">
+    <p style="font-size:20px"> Fast images are segmented and error-prone regions are calculated by the SEM support computer <br>
+        <span style="color:yellow"> <em> in less time than fast acquisition by the SEM computer  </em>  </span> 
+    </p> 
+</section>
+
+<section data-auto-animate>
+    <div style="position: absolute; top: 100px; left: 0%; width: 100%; height: 600px;">
+    <p style="font-size:20px"> <span style="color:yellow"> Milestone 1.1.2:  </span> Image rescan and hybrid image generation on SEM support computer </p> 
+    <p align="left" style="font-size:18px"> <span style="color:yellow"> Success criteria:  </span> Software code run on the SEM support computer producing rescan masks at a rate of 4MB of fast scan image/sec per GPU, with indistinguishable performance compared to the offline implementation.  </p> 
+        <img data-id="phase" src="assetsishaan/learningphase.png" width="60%">
+    <p data-id="phasetext " style="font-size:20px"> During the learning phase, Error Network and FUSEDEM2MB are trained using traditional SEM </p> 
+    </div>
+</section>
+<section data-auto-animate>
+    <div style="position: absolute; top: 100px; left: 0%; width: 100%; height: 600px;">
+    <p style="font-size:20px"> <span style="color:yellow"> Milestone 1.1.2:  </span> Image rescan and hybrid image generation on SEM support computer </p> 
+    <p align="left" style="font-size:18px"> <span style="color:yellow"> Success criteria:  </span> Software code run on the SEM support computer producing rescan masks at a rate of 4MB of fast scan image/sec per GPU, with indistinguishable performance compared to the offline implementation.  </p> 
+        <img data-id="phase" src="assetsishaan/acquisitionphase.png" width="60%">
+    <p data-id="phasetext " style="font-size:20px"> During the acquisition phase, <span style="color:yellow"> <em> images are rescanned and fused images are created in real-time  </em>  </span> </p> 
+    </div>
+</section>
+
+<section>
+    <p style="font-size:20px"> <span style="color:yellow"> Milestone 1.1.3: </span> Scan/rescan parameter evaluation </p> 
+    <p align="left" style="font-size:18px"> <span style="color:yellow"> Success criteria:  </span> Framework and initial results testing scan/rescan parameters to determine tradeoffs for throughput vs. accuracy of segmentation and synapse classification.  </p> 
+        <img src="assetsishaan/Figure_3D_arrows.jpg" width="80%">
+    <p style="font-size:20px"> SmartEM generates <span style="color:yellow"> <em> aligned and segmented connectomes for mouse cortex with equal 3D quality as multi-beam SEM  </em>  </span> </p> 
+</section>
+
+<section>
+    <p style="font-size:20px"> <span style="color:yellow"> Milestone 1.1.4: </span> Evaluation framework for human interpretation of hybrid images </p> 
+    <p align="left" style="font-size:18px"> <span style="color:yellow"> Success criteria:  </span> Establish a transparent framework for human interaction with hybrid images for feature evaluation and proofreading of segmentation and synapse classification results.  </p> 
+        <img src="assetsishaan/75ns_600ns_examples.png" width="60%">
+    <p style="font-size:20px"> <span style="color:yellow"> <em> Raw output of SmartEM is fully proofread-able by a human annotator.<br> Generative AI translates the style of SmartEM images to look like traditional EM images.  </em>  </span> </p> 
+</section>
+
+<section>
+    <p style="font-size:20px"> <span style="color:yellow"> Milestone 1.1.5: </span> Integrate segmentation analyses into rescan calculations </p> 
+    <p align="left" style="font-size:18px"> <span style="color:yellow"> Success criteria:  </span> Prototype software that applies streamlined ROI detection and segmentation to enable realtime extraction of connectomic data.  Results compared to offline analysis using extracted segment cross sections, to inform further iterative development.  </p> 
+        <img src="assetsishaan/SynapseExample.png" width="60%">
+    <p style="font-size:20px"> <span style="color:yellow"> <em> ERRNET identifies regions susceptible to segmentation errors and re-scans them at a higher quality. <br> Complementary neural network (MUSTINCLUDE) always re-scans high-value regions, e.g., synapses.  </em>  </span> </p> 
+</section>
+
+<section>
+    <p> Aim 2 Milestones - Year 1 </p> 
+    <p style="font-size:20px"> <span style="color:yellow"> Milestone 2.1.1:  </span> Highly parallelized algorithm for cloud-based image alignment</p> 
+    <p align="left" style="font-size:18px"> <span style="color:yellow"> Success criteria:  </span> Convert alignment and segmentation software pipelines into multi-threaded algorithms for cluster compute.  </p> 
+        <img src="assetsishaan/milestone211.png" width="70%">
+    <p align="left" style="font-size:20px"> <span style="color:yellow"> <em> Block matching technique obtain matching points between neighboring images.<br>
+    Elastic transformations map raw data to the aligned volume are computed by mesh relaxation.  <br>
+    Algorithms re-developed for on-board alignment in local instantiation using Python.  </em>  </span> </p> 
+</section>
+<section>
+    <p style="font-size:20px"> <span style="color:yellow"> Milestone 2.1.2:  </span> Deploy multi-threaded alignment and segmentation processes to cloud services </p> 
+    <p align="left" style="font-size:18px"> <span style="color:yellow"> Success criteria:  </span> Prototype cloud alignment/segmentation implementation that <b> maintains performance of locally deployed algorithms  </b> using metrics for Milestone 2.1.1.  </p> 
+        <img src="assetsBrock/milestone212.png" width="100%">
+    <p align="left" style="font-size:20px"> <span style="color:yellow"> 
+        We executed alignment and segmentation workflows in our cloud environment.<br>
+        Execution of cloud implementations matched the performance and data outputs of the traditional, locally deployed solutions.
+        </span> 
+    </p> 
+</section>
+</section>
 <section>
     <p> Aim 3 Milestones - Year 1 </p> 
     <p align="left" style="font-size:20px"> <span style="color:yellow"> Milestone 3.1.1:  </span> Establish metrics and timeline for assessing of segmentation quality, synapse detection, and connectivity accuracy </p> 
@@ -1093,7 +1183,7 @@ tr:hover {background-color: gray;}
 
 <section>
     <p> Learning Model </p> 
-        <img src="assetsBrock/innovationtalent.png" width="80%">
+        <img src="assetsBrock/innovationtalent.png" width="60%">
         <p align="center" style="font-size:25px">  
             Innovation = Talent + Education + Opportunity <br>
             <em> -Dr. Darryll Pines </em> 
@@ -1107,78 +1197,6 @@ tr:hover {background-color: gray;}
 
 </section>
 
-<section>
-
-<section>
-    <p> Meeting Year 1 Milestones </p> 
-</section>
-
-<section>
-    <p style="font-size:20px"> <span style="color:yellow"> Milestone 1.1.1:  </span> Automated segmentation of membranes and synapses on SEM support computer </p> 
-    <p align="left" style="font-size:18px"> <span style="color:yellow"> Success criteria:  </span> Software code run on SEM support computer producing segmentation and synapse classification results indistinguishable from offline processing of the same inputs as assessed by VI metric, carried out at a rate of at least 4 MB/sec per GPU. </p> 
-        <img src="assetsishaan/fig_dwellTimeborder.png" width="60%">
-    <p style="font-size:20px"> Fast images are segmented and error-prone regions are calculated by the SEM support computer <br>
-        <span style="color:yellow"> <em> in less time than fast acquisition by the SEM computer  </em>  </span> 
-    </p> 
-</section>
-
-<section data-auto-animate>
-    <div style="position: absolute; top: 100px; left: 0%; width: 100%; height: 600px;">
-    <p style="font-size:20px"> <span style="color:yellow"> Milestone 1.1.2:  </span> Image rescan and hybrid image generation on SEM support computer </p> 
-    <p align="left" style="font-size:18px"> <span style="color:yellow"> Success criteria:  </span> Software code run on the SEM support computer producing rescan masks at a rate of 4MB of fast scan image/sec per GPU, with indistinguishable performance compared to the offline implementation.  </p> 
-        <img data-id="phase" src="assetsishaan/learningphase.png" width="60%">
-    <p data-id="phasetext " style="font-size:20px"> During the learning phase, Error Network and FUSEDEM2MB are trained using traditional SEM </p> 
-    </div>
-</section>
-<section data-auto-animate>
-    <div style="position: absolute; top: 100px; left: 0%; width: 100%; height: 600px;">
-    <p style="font-size:20px"> <span style="color:yellow"> Milestone 1.1.2:  </span> Image rescan and hybrid image generation on SEM support computer </p> 
-    <p align="left" style="font-size:18px"> <span style="color:yellow"> Success criteria:  </span> Software code run on the SEM support computer producing rescan masks at a rate of 4MB of fast scan image/sec per GPU, with indistinguishable performance compared to the offline implementation.  </p> 
-        <img data-id="phase" src="assetsishaan/acquisitionphase.png" width="60%">
-    <p data-id="phasetext " style="font-size:20px"> During the acquisition phase, <span style="color:yellow"> <em> images are rescanned and fused images are created in real-time  </em>  </span> </p> 
-    </div>
-</section>
-
-<section>
-    <p style="font-size:20px"> <span style="color:yellow"> Milestone 1.1.3: </span> Scan/rescan parameter evaluation </p> 
-    <p align="left" style="font-size:18px"> <span style="color:yellow"> Success criteria:  </span> Framework and initial results testing scan/rescan parameters to determine tradeoffs for throughput vs. accuracy of segmentation and synapse classification.  </p> 
-        <img src="assetsishaan/Figure_3D_arrows.jpg" width="80%">
-    <p style="font-size:20px"> SmartEM generates <span style="color:yellow"> <em> aligned and segmented connectomes for mouse cortex with equal 3D quality as multi-beam SEM  </em>  </span> </p> 
-</section>
-
-<section>
-    <p style="font-size:20px"> <span style="color:yellow"> Milestone 1.1.4: </span> Evaluation framework for human interpretation of hybrid images </p> 
-    <p align="left" style="font-size:18px"> <span style="color:yellow"> Success criteria:  </span> Establish a transparent framework for human interaction with hybrid images for feature evaluation and proofreading of segmentation and synapse classification results.  </p> 
-        <img src="assetsishaan/75ns_600ns_examples.png" width="60%">
-    <p style="font-size:20px"> <span style="color:yellow"> <em> Raw output of SmartEM is fully proofread-able by a human annotator.<br> Generative AI translates the style of SmartEM images to look like traditional EM images.  </em>  </span> </p> 
-</section>
-
-<section>
-    <p style="font-size:20px"> <span style="color:yellow"> Milestone 1.1.5: </span> Integrate segmentation analyses into rescan calculations </p> 
-    <p align="left" style="font-size:18px"> <span style="color:yellow"> Success criteria:  </span> Prototype software that applies streamlined ROI detection and segmentation to enable realtime extraction of connectomic data.  Results compared to offline analysis using extracted segment cross sections, to inform further iterative development.  </p> 
-        <img src="assetsishaan/SynapseExample.png" width="60%">
-    <p style="font-size:20px"> <span style="color:yellow"> <em> ERRNET identifies regions susceptible to segmentation errors and re-scans them at a higher quality. <br> Complementary neural network (MUSTINCLUDE) always re-scans high-value regions, e.g., synapses.  </em>  </span> </p> 
-</section>
-
-<section>
-    <p style="font-size:20px"> <span style="color:yellow"> Milestone 2.1.1:  </span> Highly parallelized algorithm for cloud-based image alignment</p> 
-    <p align="left" style="font-size:18px"> <span style="color:yellow"> Success criteria:  </span> Convert alignment and segmentation software pipelines into multi-threaded algorithms for cluster compute.  </p> 
-        <img src="assetsishaan/milestone211.png" width="70%">
-    <p align="left" style="font-size:20px"> <span style="color:yellow"> <em> Block matching technique obtain matching points between neighboring images.<br>
-    Elastic transformations map raw data to the aligned volume are computed by mesh relaxation.  <br>
-    Algorithms re-developed for on-board alignment in local instantiation using Python.  </em>  </span> </p> 
-</section>
-<section>
-    <p style="font-size:20px"> <span style="color:yellow"> Milestone 2.1.2:  </span> Deploy multi-threaded alignment and segmentation processes to cloud services </p> 
-    <p align="left" style="font-size:18px"> <span style="color:yellow"> Success criteria:  </span> Prototype cloud alignment/segmentation implementation that <b> maintains performance of locally deployed algorithms  </b> using metrics for Milestone 2.1.1.  </p> 
-        <img src="assetsBrock/milestone212.png" width="100%">
-    <p align="left" style="font-size:20px"> <span style="color:yellow"> 
-        We executed alignment and segmentation workflows in our cloud environment.<br>
-        Execution of cloud implementations matched the performance and data outputs of the traditional, locally deployed solutions.
-        </span> 
-    </p> 
-</section>
-</section>
 
 <section>
 
@@ -1252,9 +1270,9 @@ tr:hover {background-color: gray;}
             <span style="color:gray"> Tool development  </span> <br>
         </p>
             <ul>
-            <li align="left" style="font-size:20px;color:white"> Continue to develop data conversion and visualization tools as needed. </li> <br>
+            <li align="left" style="font-size:20px;color:white"> Continue to develop data conversion and visualization tools as needed. </li> 
                 <ul>
-                    <li align="left" style="font-size:20px;color:white"> ex. VAST to precompute </li> 
+                    <li align="left" style="font-size:20px;color:white"> ex. VAST to precompute </li> <br>
                 </ul>
             <li align="left" style="font-size:20px;color:white"> Link novel tools within segmentation workflows to show their utility  </li> 
                 <ul>
@@ -1317,6 +1335,9 @@ tr:hover {background-color: gray;}
         </p>
         <p align="center" style="font-size:20px">  
            <span style="color:yellow"> One year with current SmartEM pipeline  </span> 
+        </p>
+        <p align="center" style="font-size:20px">  
+           <span style="color:yellow"> <em> Largest cortical volume with a single beam SEM to date  </em> </span> 
         </p>
 </section>
 </section>
