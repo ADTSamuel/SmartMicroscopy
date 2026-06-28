@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>
+      Connectomics 2026 
+    </title>
+    <meta content="Berlin Smart Imaging presentation by Aravi Samuel" name="description"/>
+    <meta content="Aravi Samuel" name="author"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="dist/reset.css" rel="stylesheet"/>
+    <link href="dist/reveal.css" rel="stylesheet"/>
+    <link href="dist/theme/black.css" id="theme" rel="stylesheet"/>
+    <link href="plugin/highlight/monokai.css" rel="stylesheet"/>
+    <link href="https://tikzjax.com/v1/fonts.css" rel="stylesheet"/>
+
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      :root {
+        --layout-gap: 2rem;
+      }
+
+      table,
+      tr,
+      td,
+      th {
+        border: hidden;
+      }
+
+      tr:hover {
+        background-color: gray;
+      }
+
+      .stack {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .row {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--layout-gap);
+        width: 100%;
+      }
+
+      .column {
+        min-width: 0;
+      }
+
+      .left,
+      .right {
+        flex: 0 0 45%;
+      }
+
+      .middle {
+        flex: 0 0 10%;
+      }
+
+      .third {
+        flex: 0 0 30%;
+      }
+
+      .twothird {
+        flex: 0 0 60%;
+      }
+
+      .spacer {
+        min-height: 1.5rem;
+      }
+
+      .text-left {
+        text-align: left;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .text-right {
+        text-align: right;
+      }
+
+      .tiny-text {
+        font-size: 20px;
+      }
+
+      .smallish-text {
+        font-size: 25px;
+      }
+
+      .url-slide {
+        font-size: 30px;
+      }
+
+      .w-100 {
+        width: 100%;
+      }
+
+      .w-90 {
+        width: 90%;
+      }
+
+      .w-80 {
+        width: 80%;
+      }
+
+      .w-70 {
+        width: 70%;
+      }
+
+      .w-60 {
+        width: 60%;
+      }
+
+      .w-50 {
+        width: 50%;
+      }
+
+      .w-40 {
+        width: 40%;
+      }
+
+      .acknowledgments {
+        position: relative;
+        min-height: 32rem;
+      }
+
+      .acknowledgments-photo {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 60%;
+      }
+
+      .acknowledgments-list {
+        position: absolute;
+        top: 60px;
+        left: 70%;
+        width: 30%;
+      }
+
+      .highlight-name {
+        color: yellow;
+      }
+
+      .acknowledgments-slide {
+        padding: 0 1rem;
+      }
+
+      .acknowledgments-title {
+        margin-bottom: 1.2rem;
+      }
+
+      .ack-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 1fr 1fr;
+        gap: 1.1rem;
+        align-items: start;
+      }
+
+      .ack-card {
+        background: rgb(255 255 255 / 0.08);
+        border: 1px solid rgb(255 255 255 / 0.18);
+        border-radius: 16px;
+        padding: 0.75rem 0.9rem;
+        text-align: left;
+      }
+
+      .ack-group + .ack-group {
+        margin-top: 0.8rem;
+      }
+
+      .ack-heading {
+        color: var(--accent, yellow);
+        font-size: 24px;
+        font-weight: 500;
+        margin: 0 0 0.35rem;
+      }
+
+      .ack-list {
+        font-size: 18px;
+        line-height: 1.28;
+      }
+
+      .ack-list.compact {
+        font-size: 15px;
+        line-height: 1.22;
+      }
+
+      .ack-name,
+      .affiliation {
+        white-space: nowrap;
+      }
+
+      .affiliation {
+        font-style: italic;
+      }
+    </style>
+
+    <script src="https://tikzjax.com/v1/tikzjax.js">
+    </script>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- URL slide -->
+
+        <section data-background="#000000">
+          <p class="url-slide">
+            https://bit.ly/SamuelBerlin2026
+          </p>
+        </section>
+
+        <!-- Title slide -->
+
+        <section data-background="#000000">
+          <p>
+            Smart imaging and data analysis for connectomics
+          </p>
+          <p>
+            <small>
+              Aravi Samuel
+            </small>
+          </p>
+        </section>
+
+        <section data-background="#000000">
+          <p class="text-left">
+            Outline 
+          </p>
+          <p class="text-left smallish-text">
+            Smart imaging with a single-beam SEM <br>
+            Smarter imaging with <em> random access </em> single-beam SEM <br>
+            Smart data analysis with behavioral cloning <br>
+          </p>
+        </section>
+
+        <section data-background="#FFFFFF">
+          <p>
+            Smart imaging with a single-beam SEM 
+          </p>
+            <img alt="Traditional scanning" class="w-80" src="assetsishaan/SmartEMrationaletop.png"/>
+        </section>
+
+        <section data-background="#FFFFFF">
+            <img alt="Smart scanning" class="w-80" src="assetsishaan/smartEMrationale.png"/>
+        </section>
+
+        <section data-background="#FFFFFF">
+          <p>
+            Rapidly scan entire sample, <br> rapidly rescan error-prone regions 
+          </p>
+            <img alt="Running smart scanning" class="w-80" src="assetsishaan/RunningSmartEM.png"/>
+        </section>
+
+        <section>
+          <section data-background="#FFFFFF">
+            <p>
+              Worm 
+            </p>
+            <img alt="worm performance" class="w-50" src="assetsishaan/worms.png"/>
+          </section>
+
+          <section data-background="#FFFFFF">
+            <p>
+              Mouse 
+            </p>
+            <img alt="mouse performance" class="w-50" src="assetsishaan/mouse.png"/>
+          </section>
+
+          <section data-background="#FFFFFF">
+            <p>
+              Human 
+            </p>
+            <img alt="human performance" class="w-50" src="assetsishaan/human.png"/>
+          </section>
+
+          <section data-background="#FFFFFF">
+            <p>
+              Performance 
+            </p>
+            <img alt="performance" class="w-40" src="assetsishaan/performance.png"/>
+          </section>
+        </section>
+
+        <section data-background="#000000">
+          <video class="w-60" controls="" data-autoplay="" loop="" src="assetsmcknight/wormconnectomemovie.mp4">
+          </video>
+          <p>
+            <small>
+               Witvliet et al. (2021)
+            </small>
+          </p>
+        </section>
+
+        <section>
+          <section data-background="#FFFFFF">
+            <p>
+              Smarter imaging with <em> random access </em> single-beam SEM <br>
+            </p>
+            <img alt="wafer" class="w-40" src="assetsishaan/wafer.png"/>
+          </section>
+
+          <section data-background="#FFFFFF">
+            <img alt="uniform imaging" class="w-40" src="assetsishaan/uniformhigh.png"/>
+          </section>
+
+          <section data-background="#FFFFFF">
+            <img alt="targeted imaging" class="w-60" src="assetsishaan/targeted.png"/>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="#FFFFFF">
+            <p>
+              RAEM imaging with <em> random access </em> single-beam SEM <br>
+            </p>
+            <img alt="raem goal" class="w-80" src="assetsishaan/RAEMgoal.png"/>
+          </section>
+
+          <section data-background="#FFFFFF">
+            <p>
+              Create a shared coordinate system
+            </p>
+            <img alt="first challenge" class="w-80" src="assetsishaan/firstchallenge.png"/>
+          </section>
+
+          <section data-background="#FFFFFF">
+            <p>
+              The challenge: revisiting targets 
+            </p>
+            <img alt="second challenge" class="w-80" src="assetsishaan/secondchallenge.png"/>
+          </section>
+
+          <section data-background="#FFFFFF">
+            <p>
+              Find operational $f^{-1}$ via on the fly realignment 
+            </p>
+            <img alt="second challenge" class="w-80" src="assetsishaan/secondchallengesolution.png"/>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="#FFFFFF">
+            <p>
+              RAEM enables hierarchical and iterative EM <br>
+            </p>
+            <img alt="worm from low to high resolution" class="w-80" src="assetsishaan/RAEMgoal.png"/>
+          </section>
+
+          <section data-background="#FFFFFF">
+            <p>
+              Medium resolution of the head
+            </p>
+            <img alt="medium resolution" class="w-80" src="assetsishaan/mediumresolution.png"/>
+          </section>
+
+          <section data-background="#FFFFFF">
+            <p>
+              High resolution of the nerve ring 
+            </p>
+            <img alt="second challenge" class="w-80" src="assetsishaan/highresolution.png"/>
+          </section>
+
+          <section data-background="#231c19">
+            <p>
+            <small>
+              Using 3D context to automatically identify and rescan specific <br> high-salience targets in low-resolution volumes
+            </small>
+            </p>
+            <video id="smartem-video" class="w-100" controls data-autoplay loop src="assetsishaan/smartem_animation_2.mp4">
+            </video>
+
+            <script> const video = document.getElementById("smartem-video"); video.addEventListener("loadedmetadata", () => { video.playbackRate = 2.0; });
+            </script>
+          </section>
+        </section>
+
+        <section>
+          <section data-background="#000000">
+            <p>
+            <small>
+              CNNs are now extraordinarily effective at large-scale image segmentation 
+            </small>
+            </p>
+            <video id="humansegmentation-video" class="w-80" controls data-autoplay loop src="assetsishaan/humansegmentation.mp4">
+            </video>
+
+            <script> const video = document.getElementById("humansegmentation-video"); video.addEventListener("loadedmetadata", () => { video.playbackRate = 2.0; });
+            </script>
+          </section>
+          <section data-background="#000000">
+            <p>
+            <small>
+             Data analysis is a sequential decision problem 
+            </small>
+            </p>
+            <video id="proofreading-video" class="w-80" controls data-autoplay loop src="assetsishaan/proofreadingsequence.mp4">
+            </video>
+          </section>
+          <section data-background="#FFFFFF">
+            <p class="text-left smallish-text">
+             Transformers revolutionized sequential decision-making in LLMs. <br>
+             Given words so far, what should the next word be? 
+            </p>
+            <img alt="language modeling" class="w-60" src="assetsishaan/languagemodeling.png"/>
+          </section>
+          <section data-background="#FFFFFF">
+          <p class="text-left smallish-text">
+             Use transformers for sequential decision-making in data annotation <br>
+             Given GUI screenshots and clicks so far, what should the next click be? 
+          </p>
+            <img alt="language modeling" class="w-60" src="assetsishaan/behavioralcloning.png"/>
+          </section>
+        </section>
+
+
+        <section>
+          <section data-background="#FFFFFF">
+            <p>
+              Smart data analysis with behavioral cloning? <br>
+            </p>
+            <img alt="train a transformer" class="w-80" src="assetsishaan/synthetictasks.png"/>
+            <p>
+              <small>
+              1) Colored dot tracking, 2) Neuron tracking, 3) Multi-channel image alignment, 4) 3D exploration, 5) Spectral plume finding, 6) Animal limb tracking, 7) Road network construction, 8) Cell lineage tracking, and 9) Animal behavioral tracking<br>
+              </small>
+            </p>
+          </section>
+
+          <section data-background="#FFFFFF">
+            <p>
+              Next token action prediction <br>
+            </p>
+            <img alt="train a transformer" class="w-40" src="assetsishaan/actionprediction.png"/>
+            <p>
+              <small>
+                Transformer predicts GUI clicks in semantically reasonable locations
+              </small>
+            </p>
+          </section>
+
+          <section data-background="#FFFFFF">
+            <p>
+              Training on synthetic tasks<br>
+            </p>
+            <img alt="train a transformer" class="w-40" src="assetsishaan/scalinglearning.png"/>
+            <p>
+              <small>
+                Larger models are more data efficient learners 
+              </small>
+            </p>
+          </section>
+
+          <section data-background="#FFFFFF">
+            <p>
+              Training on synthetic tasks<br>
+            </p>
+            <img alt="train a transformer" class="w-40" src="assetsishaan/internalrepresentations.png"/>
+            <p>
+              <small>
+                Shared internal representations of the concept of "mistake" across tasks 
+              </small>
+            </p>
+          </section>
+
+          <section data-background="#000000">
+            <p>
+            <small>
+              Next step, train large-scale transformers for connectomics 
+            </small>
+            </p>
+            <video id="proofreading-video" class="w-80" controls data-autoplay loop src="assetsishaan/proofreadingsequence.mp4">
+            </video>
+          </section>
+
+          <section data-background="#FFFFFF">
+            <img alt="icml" class="w-100" src="assetsishaan/titleVI.png"/>
+          </section>
+        </section>
+
+
+
+
+
+
+        <!-- Acknowledgments -->
+
+        <section class="acknowledgments-slide" data-background="#000000">
+          <div class="ack-grid">
+            <div class="ack-card">
+              <div class="ack-group">
+                <p class="ack-heading">
+                  Behavioral cloning
+                </p>
+                <div class="ack-list">
+                  Ishaan Chandok 
+                  <br/>
+                  Core Park
+                  <br/>
+                </div>
+              </div>
+            </div>
+
+            <div class="ack-card">
+              <p class="ack-heading">
+                SmartEM
+              </p>
+              <div class="ack-list">
+                Yaron Meirovitch <br>
+                Ishaan Singh Chandok<br>
+                Core Park <br>
+                Pavel Potocek<br>
+                Lu Mi<br>
+                Shashata Sawmya<br>
+                Yicong Li <br>
+                Thomas L. Athey<br>
+                Vladislav Susoy<br>
+                Neha Karlupia<br>
+                Yuelong Wu<br>
+                Daniel Berger <br>
+                Richard Schalek <br>
+                Caitlyn Bishop<br>
+                Daniel Xenes <br>
+                Hannah Martinez <br>
+                Jordan Matelsky<br>
+                Brock A. Wester <br>
+                Hanspeter Pfister <br>
+                Remco Schoenmakers<br>
+                Maurice Peemen<br>
+                Jeff W. Lichtman <br>
+                Aravinthan Samuel <br>
+                Nir Shavit<br>
+              </div>
+            </div>
+
+            <div class="ack-card">
+              <div class="ack-group">
+                <p class="ack-heading">
+                  RAEM
+                </p>
+                <div class="ack-list">
+                Ishaan Singh Chandok<br>
+                Milan Patel <br>
+                Yuelong Wu<br>
+                Daniel Berger <br>
+                Richard Schalek <br>
+                Jeff Lichtman <br>
+                Aravinthan Samuel <br>
+                Yaron Meirovitch <br>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js">
+    </script>
+    <script src="plugin/zoom/zoom.js">
+    </script>
+    <script src="plugin/notes/notes.js">
+    </script>
+    <script src="plugin/search/search.js">
+    </script>
+    <script src="plugin/markdown/markdown.js">
+    </script>
+    <script src="plugin/highlight/highlight.js">
+    </script>
+    <script src="plugin/math/math.js">
+    </script>
+    <script>
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+        history: true,
+        transition: 'linear',
+        mathjax2: {
+          config: 'TeX-AMS_HTML-full',
+          TeX: {
+            Macros: {
+              R: '\\mathbb{R}',
+              set: ['\\left\\{#1 \\; ; \\; #2\\right\\}', 2]
+            }
+          }
+        },
+        plugins: [
+          RevealZoom,
+          RevealNotes,
+          RevealSearch,
+          RevealMarkdown,
+          RevealHighlight,
+          RevealMath.MathJax2
+        ]
+      });
+    </script>
+  </body>
+</html>
