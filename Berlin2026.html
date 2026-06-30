@@ -385,7 +385,7 @@
             <video id="smartem-video" class="w-100" controls data-autoplay loop src="assetsishaan/smartem_animation_2.mp4">
             </video>
 
-            <script> const video = document.getElementById("smartem-video"); video.addEventListener("loadedmetadata", () => { video.playbackRate = 2.0; });
+            <script> const video = document.getElementById("smartem-video"); video.addEventListener("loadedmetadata", () => { video.playbackRate = 4.0; });
             </script>
           </section>
         </section>
@@ -404,7 +404,7 @@
             <video id="humansegmentation-video" class="w-80" controls data-autoplay loop src="assetsishaan/humansegmentation.mp4">
             </video>
 
-            <script> const video = document.getElementById("humansegmentation-video"); video.addEventListener("loadedmetadata", () => { video.playbackRate = 2.0; });
+            <script> const video = document.getElementById("humansegmentation-video"); video.addEventListener("loadedmetadata", () => { video.playbackRate = 3.0; });
             </script>
           </section>
           <section data-background="#000000">
@@ -415,6 +415,12 @@
             </p>
             <video id="proofreading-video" class="w-80" controls data-autoplay loop muted src="assetsishaan/proofreadingsequence.mp4">
             </video>
+
+
+            <script> document.addEventListener("DOMContentLoaded", () => { const video = document.getElementById("proofreading-video"); if (video) { video.playbackRate = 1.5; video.defaultPlaybackRate = 2.0; } });
+            </script>
+
+
           </section>
           <section data-background="#FFFFFF">
             <p class="text-left smallish-text">
@@ -441,7 +447,10 @@
             <img alt="train a transformer" class="w-80" src="assetsishaan/synthetictasks.png"/>
             <p>
               <small>
-              1) Colored dot tracking, 2) Neuron tracking, 3) Multi-channel image alignment, 4) 3D exploration, 5) Spectral plume finding, 6) Animal limb tracking, 7) Road network construction, 8) Cell lineage tracking, and 9) Animal behavioral tracking<br>
+              1) Colored dot tracking, 2) Neuron tracking, 3) Multi-channel image alignment, <br>
+                4) 3D exploration, 5) Spectral plume finding, 6) Animal limb tracking, <br>
+                7) Road network construction, 8) Cell lineage tracking, <br>
+                9) Animal behavioral tracking<br>
               </small>
             </p>
           </section>
